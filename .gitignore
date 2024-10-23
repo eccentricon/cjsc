@@ -1,0 +1,8 @@
+*.dSYM/  # debug symbols
+bin/
+third_party/
+*.pdf
+*.zip
+
+### Mac OS ###
+.DS_Store
