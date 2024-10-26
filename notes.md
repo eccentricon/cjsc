@@ -4,9 +4,10 @@
 
 - Jonas Schmedtmann: https://codingheroes.io/resources/
 - Course: https://www.udemy.com/course/the-complete-javascript-course/
+  - Assignments: https://codingheroes.io/assignments/instructions.html
 - Repo: https://github.com/eccentricon/cjsc
 
-Note: On Mac, Control+Command+Spacebar (⌃⌘␣) to display emojis and symbols.
+**Note:** On Mac, Control+Command+Spacebar (⌃⌘␣) to display emojis and symbols.
 
 ## Git moves
 
