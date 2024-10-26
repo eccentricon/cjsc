@@ -2,7 +2,7 @@
 
 # The Complete JavaScript Course 2024: From Zero to Expert!
 
-- Jonas Schmedtmann
+- Jonas Schmedtmann: https://codingheroes.io/resources/
 - Course: https://www.udemy.com/course/the-complete-javascript-course/
 - Repo: https://github.com/eccentricon/cjsc
 
@@ -27,6 +27,12 @@ $ git pull origin master
 
 ## 9. Values and variables
 
-Variable names:
+[Variable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#variables) names:
 
-- `CamelCase` is the preferred convention
+- Only numbers, letters, underscore (`_`), dollar sign (`$`)
+- Must not begin with a number
+- Conventions:
+  - `CamelCase` preferred
+  - Start variables with `lowercaseLetters`
+  - `UPPERCASE` for constants
+- Can't use reserved keywords
