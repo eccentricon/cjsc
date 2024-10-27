@@ -120,15 +120,101 @@ language = "English";
 
 // 2. Think about which variables should be `const` variables (which values will never
 //    change, and which might change?). Then, change these variables to `const`.
-const LANGUAGE = "English";
-const COUNTRY = "USA";
-const CONTINENT = "North America";
-const IS_ISLAND = false;
+const LANGUAGE = language;
+const COUNTRY = country;
+const CONTINENT = continent;
+const IS_ISLAND = isIsland;
 
-console.log("LANGUAGE:", "const");
-console.log("COUNTRY:", "const");
-console.log("CONTENENT:", "const");
-console.log("IS_ISLAND:", "const");
+console.log("LANGUAGE:", LANGUAGE);
+console.log("COUNTRY:", COUNTRY);
+console.log("CONTENENT:", CONTINENT);
+console.log("IS_ISLAND:", IS_ISLAND);
 
 // 3. Try to change one of the changed variables now, and observe what happens.
-IS_ISLAND = true;
+// IS_ISLAND = true; // !Uncaught TypeError: Assignment to constant variable.
+
+// ---------------------------------------------------------------------------
+// 13. Basic operators
+// ---------------------------------------------------------------------------
+lesson = "13. Basic operators";
+logBanner(lesson);
+
+const NOW = 2037;
+const BIRTHYEAR_JONAS = 1991;
+const BIRTHYEAR_SARAH = 2018;
+
+// arithmetic operators
+const AGE_JONAS = NOW - BIRTHYEAR_JONAS;
+const AGE_SARAH = NOW - BIRTHYEAR_SARAH;
+console.log(AGE_JONAS, AGE_SARAH);
+
+console.log(
+  AGE_JONAS * 2, // multiplication
+  AGE_JONAS / 10, // division
+  2 ** 3 // exponentiation
+);
+
+// string operator
+const FIRST_NAME = "Jonas";
+const LAST_NAME = "Schmedtmann";
+console.log(FIRST_NAME + " " + LAST_NAME); // plus as concatenation
+
+// compound assignment
+let x = 10 + 5; // simple assignment (=)
+x += 10; // x = x + 10 (25)
+x *= 4;
+console.log(x);
+
+// increment/decrement
+x++;
+console.log(x);
+x--;
+x--;
+console.log(x);
+
+// comparison operators
+console.log(AGE_JONAS > AGE_SARAH); // >, <, >=, <=
+const IS_FULL_AGE = AGE_SARAH >= 18;
+console.log(IS_FULL_AGE);
+
+console.log(
+  "Is Jonas older than Sarah?",
+  NOW - BIRTHYEAR_JONAS > NOW - BIRTHYEAR_SARAH
+);
+
+logAssignment(lesson);
+let msg =
+  "1. If your country split in half, and each half would contain " +
+  "half the population, then how many people would live in each half?\n";
+console.log(msg, population / 2);
+
+msg =
+  "2. Increase the population of your country by " +
+  "1 and log the result to the console.\n";
+console.log(msg, population, "->", ++population);
+population--;
+
+msg =
+  "3. Finland has a population of 6 million. Does your country " +
+  "have more people than Finland?\n";
+let finlandPopulation = 6;
+console.log(msg, population > finlandPopulation);
+
+msg =
+  "4. The average population of a country is 33 million people. Does your " +
+  "country have less people than the average country?\n";
+let averagePopulation = 33;
+console.log(msg, population < averagePopulation);
+
+msg =
+  "5. Based on the variables you created, create a new variable " +
+  "description which contains a string with this format: 'Portugal " +
+  "is in Europe, and its 11 million people speak portuguese'.\n";
+let countryMsg = COUNTRY;
+countryMsg += " is in ";
+countryMsg += CONTINENT;
+countryMsg += ", and its ";
+countryMsg += population;
+countryMsg += " million people speak ";
+countryMsg += LANGUAGE + ".";
+console.log(msg, countryMsg);

@@ -151,7 +151,72 @@ property on the global object.
 
 **ADVICE:** _Always properly declare variables._
 
+## 13. Basic operators
+
+### Arithmetic operators
+
+All the usual [arithmetic operators] are available:
+
+```
+console.log(
+  AGE_JONAS * 2, // multiplication
+  AGE_JONAS / 10, // division
+  2 ** 3 // exponentiation
+);
+```
+
+### String concatenation (+)
+
+`+` is a [string operator][string operators].
+
+```
+const FIRST_NAME = "Jonas";
+const LAST_NAME = "Schmedtmann";
+// plus as concatenation
+console.log(FIRST_NAME + " " + LAST_NAME);
+```
+
+Template strings are a better way to do this.
+
+### Compound assignment operators (+=, \*=, etc.)
+
+```
+let x = 10 + 5; // simple assignment (=)
+x += 10; // x = x + 10 (25)
+x *= 4;
+console.log(x);
+```
+
+### Increment/decrement operators
+
+```
+x++;
+console.log(x); // 101
+x--;
+x--;
+console.log(x); // 99
+```
+
+### Comparison operators
+
+```
+console.log(AGE_JONAS > AGE_SARAH); // >, <, >=, <=
+const IS_FULL_AGE = AGE_SARAH >= 18;
+console.log(IS_FULL_AGE);
+
+console.log(
+  "Is Jonas older than Sarah?",
+  NOW - BIRTHYEAR_JONAS > NOW - BIRTHYEAR_SARAH // operator precedence
+);
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
+[arithmetic operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#arithmetic_operators
+[string operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#string_operators
 [`typeof`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+
+```
+
+```
