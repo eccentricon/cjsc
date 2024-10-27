@@ -91,6 +91,67 @@ First three are the biggies (**Number**, **String**, and **Boolean**).
 
 The [`typeof`] operator returns a string indicating the type of the operand's value.
 
+```
+console.log(typeof true); // a boolean value
+console.log(typeof javascriptIsFun); // a variable
+console.log(typeof 23); // a number
+console.log(typeof "Jonas"); // a string
+```
+
+## 12. _let_, _const_, and _var_
+
+### let
+
+Use `let` to declare variables that can change later.
+
+```
+let age = 30;
+//... more code
+age = 31; // mutate (change) the variable
+```
+
+### const
+
+Use `const` to declare variables that _**cannot**_ change later.
+
+```
+const birthYear = 1961; // immutable
+//... more code
+birthYear = 1962; // ! TypeError
+```
+
+```
+const job; // !SyntaxError - missing initializer
+```
+
+**ADVICE:** _Use `const` by default. Try to have a little mutation as possible in
+your program._
+
+### var
+
+Avoid `var` - legacy convention. `let` block-scoped, and `var` is function-scoped (more on this
+later).
+
+```
+var job = "programmer";
+job = "teacher"; // `var` is mutable like `let`
+```
+
+### Undeclared variables
+
+Undeclared variables are possible, but a _bad idea_.
+
+```
+lastName = "Osborne";
+console.log(lastName); // this works!
+```
+
+Doesn't create a variable in the current scope. JavaScript will create a
+property on the global object.
+
+**ADVICE:** _Always properly declare variables._
+
+<!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
 [`typeof`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
