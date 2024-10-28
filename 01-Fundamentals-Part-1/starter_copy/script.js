@@ -218,3 +218,19 @@ countryMsg += population;
 countryMsg += " million people speak ";
 countryMsg += LANGUAGE + ".";
 console.log(msg, countryMsg);
+
+// ---------------------------------------------------------------------------
+// 14. Operator precedence
+// ---------------------------------------------------------------------------
+lesson = "14. Operator precedence";
+logBanner(lesson);
+
+let a, b;
+a = b = 25 - 10 - 5;
+console.log(a, b);
+
+const AVG_AGE = AGE_JONAS + AGE_SARAH / 2;
+console.log(AGE_JONAS, AGE_SARAH, AVG_AGE); // 55.5 ? No!
+
+const AVERAGE_AGE = (AGE_JONAS + AGE_SARAH) / 2;
+console.log(AGE_JONAS, AGE_SARAH, AVERAGE_AGE); // 32.5 Yes!

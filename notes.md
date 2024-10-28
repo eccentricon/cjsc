@@ -210,13 +210,30 @@ console.log(
 );
 ```
 
+## 14. Operator precedence
+
+See MDN [operator precedence] table.
+
+```
+let a, b;
+a = b = 25 - 10 - 5; // assignment lower precedence than subtraction
+console.log(a, b); // 10 10
+```
+
+Use grouping (`(` `)`) to force precedence.
+
+```
+const AVG_AGE = AGE_JONAS + AGE_SARAH / 2;
+console.log(AGE_JONAS, AGE_SARAH, AVG_AGE); // 55.5 ? No!
+
+const AVERAGE_AGE = (AGE_JONAS + AGE_SARAH) / 2;
+console.log(AGE_JONAS, AGE_SARAH, AVERAGE_AGE); // 32.5 Yes!
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
 [arithmetic operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#arithmetic_operators
+[operator precedence]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence#table
 [string operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#string_operators
 [`typeof`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
-
-```
-
-```
