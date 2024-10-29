@@ -100,9 +100,9 @@ let age = 30;
 age = 31; // mutate (change) the variable
 
 // const
-const birthYear = 1961;
+const BIRTHYEAR = 1961;
 //... more code
-// birthYear = 1962; // !TypeError
+// BIRTHYEAR = 1962; // !TypeError
 // const job; // !SyntaxError - missing initializer
 
 // var
@@ -236,9 +236,9 @@ const AVERAGE_AGE = (AGE_JONAS + AGE_SARAH) / 2;
 console.log(AGE_JONAS, AGE_SARAH, AVERAGE_AGE); // 32.5 Yes!
 
 // ---------------------------------------------------------------------------
-// Coding Challenge 1
+// Coding Challenge #1
 // ---------------------------------------------------------------------------
-lesson = "Coding Challenge 1";
+lesson = "Coding Challenge #1";
 logBanner(lesson);
 
 /*
@@ -289,3 +289,121 @@ console.log("BMIJohn:", BMIJohn);
 
 let markHigherBMI = BMIMark > BMIJohn;
 console.log("markHigherBMI:", markHigherBMI);
+
+// ---------------------------------------------------------------------------
+// 17. Strings and template literals
+// ---------------------------------------------------------------------------
+lesson = "17. Strings and template literals";
+logBanner(lesson);
+
+console.log(FIRST_NAME, job, BIRTHYEAR_JONAS, NOW);
+
+const jonas =
+  "I'm " +
+  FIRST_NAME +
+  ", a " +
+  (NOW - BIRTHYEAR_JONAS) +
+  " year old " +
+  job +
+  "!";
+
+console.log(jonas);
+
+// Template strings
+const jonasNew = `I'm ${FIRST_NAME}, a ${
+  NOW - BIRTHYEAR_JONAS
+} year old ${job}!`;
+console.log(jonasNew);
+
+// Backticks for regular strings
+console.log(`Just a regular string...`);
+
+// Multi-line strings
+// old way...
+console.log(
+  "String with \n\
+multiple \n\
+lines."
+);
+
+// new way...
+console.log(`String with
+multiple
+lines.`);
+
+logAssignment(lesson);
+// Recreate the description variable from the last assignment,
+// this time using the template literal syntax.
+
+// let countryMsg = COUNTRY;
+// countryMsg += " is in ";
+// countryMsg += CONTINENT;
+// countryMsg += ", and its ";
+// countryMsg += population;
+// countryMsg += " million people speak ";
+// countryMsg += LANGUAGE + ".";
+// console.log(msg, countryMsg);
+
+const COUNTRY_MSG =
+  `${COUNTRY} is in ${CONTINENT}, and ` +
+  `its ${population} million people speak ${LANGUAGE}.`;
+
+console.log(COUNTRY_MSG);
+
+// ---------------------------------------------------------------------------
+// 18. Taking Decisions: if / else Statements
+// ---------------------------------------------------------------------------
+lesson = "18. Taking Decisions: if / else Statements";
+logBanner(lesson);
+
+age = 15;
+const MIN_AGE = 18;
+let isOldEnough = age >= MIN_AGE;
+if (isOldEnough) {
+  console.log("Sarah can get her driving license 🚗!");
+} else {
+  const YEARS_LEFT = MIN_AGE - age;
+  console.log(`Sarah is too young. Wait another ${YEARS_LEFT} years :-)`);
+}
+
+const BIRTH_YEAR = 2012;
+let century;
+if (BIRTH_YEAR <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log("Century:", century);
+
+// ---------------------------------------------------------------------------
+// Coding Challenge #2
+// ---------------------------------------------------------------------------
+lesson = "Coding Challenge #2";
+logBanner(lesson);
+console.log(BMIMark, BMIJohn);
+
+// Print a nice output to the console, telling the user who has the
+// higher BMI. The message can be either:
+// "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!".
+
+let high = "Mark";
+let low = "John";
+if (BMIMark < BMIJohn) {
+  high = "John";
+  low = "Mark";
+}
+console.log(`${high}'s BMI is higher than ${low}'s!`);
+
+// Modify the outputs above to use template literals to include the BMI
+// values in the outputs.
+// Example: "Mark's BMI (28.3) is higher than John's (23.9)!" or
+// "John's BMI (29.1) is higher than Mark's (27)!".
+let highBMI = BMIMark;
+let lowBMI = BMIJohn;
+if (BMIMark < BMIJohn) {
+  high = "John";
+  highBMI = BMIJohn;
+  low = "Mark";
+  lowBMI = BMIMark;
+}
+console.log(`${high}'s BMI (${highBMI}) is higher than ${low}'s (${lowBMI})!`);

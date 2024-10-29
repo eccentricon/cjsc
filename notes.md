@@ -230,6 +230,68 @@ const AVERAGE_AGE = (AGE_JONAS + AGE_SARAH) / 2;
 console.log(AGE_JONAS, AGE_SARAH, AVERAGE_AGE); // 32.5 Yes!
 ```
 
+## 15. A note about challenges
+
+[All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
+
+## 16. Coding challenge #1
+
+(Solution review.)
+
+## 17. Strings and template literals
+
+- Enclose literal string in backticks (<code>`</code>).
+- Interpolate variables and calculations in `${` and `}`.
+
+  ```
+  // Template literals
+  const jonasNew = `I'm ${FIRST_NAME}, a ${NOW - BIRTHYEAR_JONAS} year old ${job}!`;
+  console.log(jonasNew);
+  ```
+
+- You can use backticks to delimit any string:
+
+  ```
+  console.log(`Just a regular string...`); // no interpolation!
+  ```
+
+### Multi-line strings
+
+Old way uses `\n` and `\` continuation:
+
+```
+// old way...
+console.log("String with \n\
+multiple \n\
+lines."
+);
+```
+
+New way uses backticks:
+
+```
+// new way...
+console.log(`String with
+multiple
+lines.`);
+```
+
+## 18. Taking Decisions: if / else Statements
+
+Term: _control structure_
+
+```
+age = 15;
+const MIN_AGE = 18;
+let isOldEnough = age >= MIN_AGE;
+if (isOldEnough) {
+  console.log("Sarah can get her driving license 🚗!");
+} else {
+  const YEARS_LEFT = MIN_AGE - age;
+  console.log(`Sarah is too young. Wait another ${YEARS_LEFT} years :-)`);
+}
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
