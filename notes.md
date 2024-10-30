@@ -292,6 +292,69 @@ if (isOldEnough) {
 }
 ```
 
+## 19. Coding challenge #2
+
+(Solution review)\
+[All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
+
+## 20. Type conversion and coercion
+
+- **conversion**: we manually convert from one type to another
+- **coercion**: JS automatically converts types for us
+
+### Type conversion
+
+The `+` operator is concatenation when one of the operands is a string:
+
+```
+const inputYear = "1991"; // input values usually come in as strings
+console.log(`inputYear = '${inputYear}'`);
+console.log("inputYear + 18");
+console.log(typeof (inputYear + 18), inputYear + 18); // ! '199118' not what we want
+```
+
+`Number()` converts it's argument to a number:
+
+```
+console.log(Number(inputYear), inputYear);
+console.log(typeof (Number(inputYear) + 18), Number(inputYear) + 18); // Yes
+
+console.log(Number("Jonas")); // NaN
+```
+
+`NaN` really means "invalid number" - it's still a number:
+
+```
+console.log(typeof NaN); // number
+```
+
+`String()` converts its argument to a string:
+
+```
+console.log(String("23") + 2); // '232'
+```
+
+Yes, there's also a `Boolean()` but booleans require special handling
+(more on this later).
+
+### Type coercion
+
+- `+` coerces to `string` when one of its operands is a `string` (i.e. its concatenating)
+- `-`, `*`, and `/` coerce to `number`
+
+#### Examples
+
+| Expression                              | Evaluates to          | Notes                                                        |
+| --------------------------------------- | --------------------- | ------------------------------------------------------------ |
+| `console.log("I am", 23, "years old");` | `'I am 23 years old'` | `23` coerced to string                                       |
+| `"23" - "10" - 3`                       | `10`                  | `"23"` and `"10"` coerced to numbers                         |
+| `"23" + "10" + 3`                       | `'23103'`             | `3` coerced to string                                        |
+| `"23" + "10" + 3 + 5`                   | `'231035'`            | `3` and `5` coerced to strings because `+` is left-to-right  |
+| `3 + 5 + "23" + "10"`                   | `'82310'`             | `8` (`3 + 5`) coerced to string because `+` is left-to-right |
+| `"23" - "10" - "3"`                     | `10`                  | `"23"`, `"10"`, and `"3"` coerced to numbers                 |
+| `"23" * "2"`                            | `46`                  | all coerced to numbers                                       |
+| `"h" * 2`                               | `NaN`                 | `"h"` cannot be coerced                                      |
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 

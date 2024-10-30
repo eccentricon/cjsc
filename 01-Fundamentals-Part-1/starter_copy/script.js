@@ -407,3 +407,45 @@ if (BMIMark < BMIJohn) {
   lowBMI = BMIMark;
 }
 console.log(`${high}'s BMI (${highBMI}) is higher than ${low}'s (${lowBMI})!`);
+
+// ---------------------------------------------------------------------------
+// 20. Type conversion and coercion
+// ---------------------------------------------------------------------------
+lesson = "20. Type conversion and coercion";
+logBanner(lesson);
+
+// Type conversion
+const inputYear = "1991"; // input values usually come in as strings
+console.log(`inputYear = '${inputYear}'`);
+console.log("inputYear + 18");
+console.log(typeof (inputYear + 18), inputYear + 18); // ! '199118' not what we want
+console.log(Number(inputYear), inputYear);
+console.log(typeof (Number(inputYear) + 18), Number(inputYear) + 18); // Yes
+
+console.log(Number("Jonas")); // NaN
+
+// NaN really means "invalid number" - it's still a number
+console.log(typeof NaN); // number
+
+console.log(Number("Jonas") + 18); // NaN + a number is still NaN
+
+console.log(String("23") + 2); // '232'
+
+// Type coercion
+console.log("I am", 23, "years old"); // 23 coerced to string
+console.log("23" - "10" - 3); // 10: 23 and 10 coerced to numbers
+console.log("23" + "10" + 3); // '23103': 3 coerced to string
+console.log("23" + "10" + 3 + 5); // '231035': 3 and 5 coerced to strings
+// because '+' is left-to-right eval
+console.log(3 + 5 + "23" + "10"); // '82310': 8 (3 + 5) coerced to string
+// because '+' is left-to-right eval
+console.log("23" - "10" - "3"); // 10: 23, 10, and 3 coerced to numbers
+console.log("23" * "2"); // 46: coerced to numbers
+console.log("h" * 3); // NaN
+
+logAssignment(lesson);
+console.log("9" - "5"); // -> 4
+console.log("19" - "13" + "17"); // -> '617'
+console.log("19" - "13" + 17); // -> 23
+console.log("123" < 57); // -> false
+console.log(5 + 6 + "4" + 9 - 4 - 2); // -> 1143
