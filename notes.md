@@ -73,7 +73,10 @@ First three are the biggies (**Number**, **String**, and **Boolean**).
 ---
 
 4. **Undefined** - Value of variable that's not yet defined ("empty value")\
-   `let children;`
+
+   ```
+   let children; // undefined
+   ```
 
 5. **Null** - Also means "empty value"
 
@@ -354,6 +357,29 @@ Yes, there's also a `Boolean()` but booleans require special handling
 | `"23" - "10" - "3"`                     | `10`                  | `"23"`, `"10"`, and `"3"` coerced to numbers                 |
 | `"23" * "2"`                            | `46`                  | all coerced to numbers                                       |
 | `"h" * 2`                               | `NaN`                 | `"h"` cannot be coerced                                      |
+
+## 21. Truthy and falsey values
+
+Five **falsey** values:
+
+1. `0`
+2. `''`
+3. `undefined`
+4. `null`
+5. `NaN`
+
+```
+console.log(Boolean(0)); //         false
+console.log(Boolean(undefined)); // false
+console.log(Boolean("Jonas")); //   true
+console.log(Boolean({})); //        true (empty object)
+console.log(Boolean("")); //        false
+```
+
+Conversion to Boolean almost always happens _implicitly_ (coercion), in two scenarios:
+
+1. Using logical operators/expressions (`==`, `!=`, etc.)
+2. Logical context (e.g. the condition of an `if`-`else` statement)
 
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->

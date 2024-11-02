@@ -449,3 +449,32 @@ console.log("19" - "13" + "17"); // -> '617'
 console.log("19" - "13" + 17); // -> 23
 console.log("123" < 57); // -> false
 console.log(5 + 6 + "4" + 9 - 4 - 2); // -> 1143
+
+// ---------------------------------------------------------------------------
+// 21. Truthy and falsey values
+// ---------------------------------------------------------------------------
+lesson = "21. Truthy and falsey values";
+logBanner(lesson);
+
+// 5 falsey values: 0, '', undefined, null, NaN
+console.log(Boolean(0)); //         falsey
+console.log(Boolean(undefined)); // falsey
+console.log(Boolean("Jonas")); //   truthy
+console.log(Boolean({})); //        truthy (empty object)
+console.log(Boolean("")); //        falsey
+
+const money = 0;
+if (money) {
+  console.log("Don't spend too much.");
+} else {
+  console.log("You should get a job!");
+}
+
+// let height; // undefined - falsey
+// let height = 123; // truthy
+let height = 0; // falsey!
+if (height) {
+  console.log("YAY! Height is defined.");
+} else {
+  console.log("Height is undefined.");
+}
