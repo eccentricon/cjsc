@@ -478,3 +478,42 @@ if (height) {
 } else {
   console.log("Height is undefined.");
 }
+
+// ---------------------------------------------------------------------------
+lesson = "22. Equality operators: == vs. ===";
+// ---------------------------------------------------------------------------
+logBanner(lesson);
+
+age = 18;
+if (age === 18) console.log("You are an adult!");
+
+// loose equality: == (does type coercion)
+// strict equality: === (NO type coercion)
+
+age = "18";
+if (age === 18) console.log("You are an adult! (strict)");
+if (age == 18) console.log("You are an adult! (loose)");
+
+// prompting for a value
+// let favorite = prompt("What's your favorite number?");
+// console.log(favorite, typeof favorite); // string!
+// if (favorite === 23) {
+//   // false!
+//   console.log("Cool! 23 is an amazing number!");
+// }
+
+// better...
+
+favorite = Number(prompt("What's your favorite number?"));
+if (favorite === 23) {
+  console.log("Cool! 23 is an amazing number!");
+} else if (favorite === 7) {
+  console.log(`${favorite} is also a cool number!`);
+} else if (favorite === 9) {
+  console.log(`${favorite} is also a cool number!`);
+} else {
+  console.log("Number is not 23 or 7 or 9.");
+}
+
+// not equals
+if (favorite !== 23) console.log("Why not try 23?");

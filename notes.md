@@ -360,13 +360,15 @@ Yes, there's also a `Boolean()` but booleans require special handling
 
 ## 21. Truthy and falsey values
 
-Five **falsey** values:
+In addition to `false` there are **five _falsey_ values**:
 
 1. `0`
-2. `''`
+2. `''` (empty string)
 3. `undefined`
 4. `null`
 5. `NaN`
+
+Everything else is **truthy**.
 
 ```
 console.log(Boolean(0)); //         false
@@ -376,10 +378,67 @@ console.log(Boolean({})); //        true (empty object)
 console.log(Boolean("")); //        false
 ```
 
-Conversion to Boolean almost always happens _implicitly_ (coercion), in two scenarios:
+Using `Boolean()` is rare; conversion to Boolean almost always happens _implicitly_ (coercion),
+in two scenarios:
 
 1. Using logical operators/expressions (`==`, `!=`, etc.)
 2. Logical context (e.g. the condition of an `if`-`else` statement)
+
+## Equality operators: == vs. ===
+
+```
+if (age === 18) console.log("You are an adult!");
+```
+
+| Operator | Name                | Description                   |
+| -------- | ------------------- | ----------------------------- |
+| `===`    | **strict equality** | doesn't perform type coercion |
+| `==`     | **loose equality**  | does type coercion            |
+
+```
+'18' == 18; // true
+'18' === 18; // false
+```
+
+**ADVICE:** _For clean code, prefer `===` (strict equality)._
+
+### Prompting for a value
+
+`prompt()` prompts user for input and returns a _string_.
+
+```
+let favorite = prompt("What's your favorite number?");
+console.log(favorite, typeof favorite); // string!
+if (favorite === 23) { // false!
+  console.log("Cool! 23 is an amazing number!");
+}
+
+// better...
+favorite = Number(prompt("What's your favorite number?"));
+// etc.
+```
+
+### else if chaining
+
+```
+favorite = Number(prompt("What's your favorite number?"));
+if (favorite === 23) {
+  console.log("Cool! 23 is an amazing number!");
+} else if (favorite === 7) {
+  console.log(`${favorite} is also a cool number!`);
+} else if (favorite === 9) {
+  console.log(`${favorite} is also a cool number!`);
+} else {
+  console.log("Number is not 23 or 7 or 9.");
+}
+```
+
+### not equals
+
+| Operator | Name                  | Description                   |
+| -------- | --------------------- | ----------------------------- |
+| `!==`    | **strict inequality** | doesn't perform type coercion |
+| `!=`     | **loose inequality**  | does type coercion            |
 
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
