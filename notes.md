@@ -442,6 +442,22 @@ if (favorite === 23) {
 
 ## 23. Boolean logic
 
+| Operator | Name            | Description                                    |
+| -------- | --------------- | ---------------------------------------------- |
+| `&&`     | **logical AND** | if both `true`                                 |
+| `\|\|`   | **logical OR**  | if either `true`                               |
+| `!`      | **logical NOT** | unary, negates operand (and higher precedence) |
+
+| `&&`    | `true`  | `false` |
+| ------- | ------- | ------- |
+| `true`  | `true`  | `false` |
+| `false` | `false` | `false` |
+
+| `\|\|`  | `true` | `false` |
+| ------- | ------ | ------- |
+| `true`  | `true` | `true`  |
+| `false` | `true` | `false` |
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
