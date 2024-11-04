@@ -440,6 +440,8 @@ if (favorite === 23) {
 | `!==`    | **strict inequality** | doesn't perform type coercion |
 | `!=`     | **loose inequality**  | does type coercion            |
 
+## 23. Boolean logic
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 

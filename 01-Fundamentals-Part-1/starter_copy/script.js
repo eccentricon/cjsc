@@ -504,7 +504,8 @@ if (age == 18) console.log("You are an adult! (loose)");
 
 // better...
 
-favorite = Number(prompt("What's your favorite number?"));
+// favorite = Number(prompt("What's your favorite number?"));
+favorite = 24;
 if (favorite === 23) {
   console.log("Cool! 23 is an amazing number!");
 } else if (favorite === 7) {
@@ -517,3 +518,40 @@ if (favorite === 23) {
 
 // not equals
 if (favorite !== 23) console.log("Why not try 23?");
+
+logAssignment(lesson);
+
+// 1. Declare a variable numNeighbours based on a prompt input like this:
+//      prompt('How many neighbour countries does your contry have?');
+
+let numNeighbors = Number(
+  prompt("How many neighbor countries does your contry have?")
+);
+console.log(`numNeighbors: ${typeof numNeighbors} ${numNeighbors}`);
+
+// 2. If there is only 1 neighbour, log to the console 'Only 1 border!'
+//    (use loose equality == for now).
+if (numNeighbors === 1) console.log("Only 1 border!");
+// 3. Use an else-if block to log 'More than 1 border' in case numNeighbours
+//    is greater than 1.
+else if (numNeighbors >= 2) console.log("More than 1 border");
+// 4. Use an else block to log 'No borders' (this block will be executed when
+//    numNeighbours is 0 or any other value).
+else console.log("No borders");
+
+// 5. Test the code with different values of numNeighbours, including 1 and 0.
+
+// 6. Change == to ===, and test the code again, with the same values of
+//    numNeighbours. Notice what happens when there is exactly 1 border!
+//    Why is this happening?
+
+// 7. Finally, convert numNeighbours to a number, and watch what happens now
+//    when you input 1.
+
+// 8. Reflect on why we should use the === operator and type conversion in
+//    this situation.
+
+// ---------------------------------------------------------------------------
+lesson = "23. Boolean logic";
+// ---------------------------------------------------------------------------
+// logBanner(lesson);
