@@ -464,6 +464,11 @@ if (favorite === 23) {
 | `\|\|`   | **logical OR**  | binary, `true` if _either_ operand is `true`   |
 | `!`      | **logical NOT** | unary, negates operand (and higher precedence) |
 
+## 25. Coding challenge #3
+
+(Solution review)\
+[All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
