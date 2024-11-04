@@ -460,8 +460,8 @@ if (favorite === 23) {
 
 | Operator | Name            | Description                                    |
 | -------- | --------------- | ---------------------------------------------- |
-| `&&`     | **logical AND** | if both `true`                                 |
-| `\|\|`   | **logical OR**  | if either `true`                               |
+| `&&`     | **logical AND** | binary, `true` if _both_ operands are `true`   |
+| `\|\|`   | **logical OR**  | binary, `true` if _either_ operand is `true`   |
 | `!`      | **logical NOT** | unary, negates operand (and higher precedence) |
 
 <!-- ---------------------------------------------------------------------- ->
