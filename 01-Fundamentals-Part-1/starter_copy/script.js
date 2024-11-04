@@ -524,20 +524,22 @@ logAssignment(lesson);
 // 1. Declare a variable numNeighbours based on a prompt input like this:
 //      prompt('How many neighbour countries does your contry have?');
 
-let numNeighbors = Number(
-  prompt("How many neighbor countries does your contry have?")
-);
-console.log(`numNeighbors: ${typeof numNeighbors} ${numNeighbors}`);
+// let numNeighbors = Number(
+//   prompt("How many neighbor countries does your contry have?")
+// );
+// console.log(`numNeighbors: ${typeof numNeighbors} ${numNeighbors}`);
 
 // 2. If there is only 1 neighbour, log to the console 'Only 1 border!'
 //    (use loose equality == for now).
-if (numNeighbors === 1) console.log("Only 1 border!");
+// if (numNeighbors === 1) console.log("Only 1 border!");
+
 // 3. Use an else-if block to log 'More than 1 border' in case numNeighbours
 //    is greater than 1.
-else if (numNeighbors >= 2) console.log("More than 1 border");
+// else if (numNeighbors >= 2) console.log("More than 1 border");
+
 // 4. Use an else block to log 'No borders' (this block will be executed when
 //    numNeighbours is 0 or any other value).
-else console.log("No borders");
+// else console.log("No borders");
 
 // 5. Test the code with different values of numNeighbours, including 1 and 0.
 
@@ -554,4 +556,20 @@ else console.log("No borders");
 // ---------------------------------------------------------------------------
 lesson = "23. Boolean logic";
 // ---------------------------------------------------------------------------
-// logBanner(lesson);
+logBanner(lesson);
+
+console.log(`
+| AND   | true  | false |
+| ----- | ----- | ----- |
+| true  | true  | false |
+| false | false | false |
+
+| OR    | true  | false |
+| ----- | ----- | ----- |
+| true  | true  | true  |
+| false | true  | false |
+
+| NOT   | true  | false |
+| ----- | ----- | ----- |
+|       | false | true  |
+`);

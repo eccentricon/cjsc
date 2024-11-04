@@ -442,21 +442,27 @@ if (favorite === 23) {
 
 ## 23. Boolean logic
 
+| AND     | `true`  | `false` |
+| ------- | ------- | ------- |
+| `true`  | `true`  | `false` |
+| `false` | `false` | `false` |
+
+| OR      | `true` | `false` |
+| ------- | ------ | ------- |
+| `true`  | `true` | `true`  |
+| `false` | `true` | `false` |
+
+| NOT | `true`  | `false` |
+| --- | ------- | ------- |
+|     | `false` | `true`  |
+
+## 24. Logical operators
+
 | Operator | Name            | Description                                    |
 | -------- | --------------- | ---------------------------------------------- |
 | `&&`     | **logical AND** | if both `true`                                 |
 | `\|\|`   | **logical OR**  | if either `true`                               |
 | `!`      | **logical NOT** | unary, negates operand (and higher precedence) |
-
-| `&&`    | `true`  | `false` |
-| ------- | ------- | ------- |
-| `true`  | `true`  | `false` |
-| `false` | `false` | `false` |
-
-| `\|\|`  | `true` | `false` |
-| ------- | ------ | ------- |
-| `true`  | `true` | `true`  |
-| `false` | `true` | `false` |
 
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
