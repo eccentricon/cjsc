@@ -502,6 +502,19 @@ switch (day) {
 }
 ```
 
+## 27. Statements and expressions
+
+_expression_&mdash;a piece of code that produces a value
+
+- `3 + 4`
+- `1991`
+- `true && false && !false`
+
+_statement_&mdash;a bigger piece of code that
+
+- performs an action
+- does _not_ necessarily produce a value
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
