@@ -534,6 +534,11 @@ let drink = age >= 18 ? "wine 🍷" : "water 💧";
 console.log(`I like to drink ${drink}!`);
 ```
 
+## 29. Coding challenge #4
+
+(Solution review)\
+[All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
