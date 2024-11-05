@@ -19,7 +19,7 @@ function logBanner(text) {
 }
 function logAssignment(text) {
   // logDivider();
-  console.log("*** ASSIGNMENT", text, "***");
+  console.log("\n*** ASSIGNMENT", text, "***");
 }
 let lesson;
 
@@ -696,4 +696,90 @@ if (scoreDolphins === scoreKoalas && scoreDolphins >= MIN_SCORE) {
   console.log("Koalas win the trophy");
 } else {
   console.log("Nobody wins.");
+}
+
+// ---------------------------------------------------------------------------
+lesson = "26. The switch statement";
+// ---------------------------------------------------------------------------
+logBanner(lesson);
+
+let day = "monday";
+
+console.log("switch...");
+
+switch (day) {
+  case "monday": // day === 'monday'
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+    break;
+  case "tuesday":
+    console.log("Prepare theory videos");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examples");
+    break;
+  case "friday":
+    console.log("Record videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend :D");
+    break;
+  default:
+    console.log("Not a valid day!");
+}
+
+// Rewrite using if/else
+console.log("if/else...");
+
+if (day === "monday") {
+  console.log("Plan course structure");
+  console.log("Go to coding meetup");
+} else if (day === "tuesday") {
+  console.log("Prepare theory videos");
+} else if (day === "wednesday" || day === "thursday") {
+  console.log("Write code examples");
+} else if (day === "friday") {
+  console.log("Record videos");
+} else if (day === "saturday" || day === "sunday") {
+  console.log("Enjoy the weekend :D");
+} else {
+  console.log("Not a valid day!");
+}
+
+logAssignment(lesson);
+
+language = "english";
+console.log(`Language: ${language}`);
+switch (language) {
+  // chinese or mandarin: 'MOST number of native speakers!';
+  case "chinese":
+  case "mandarin":
+    console.log("MOST number of native speakers!");
+    break;
+
+  // spanish: '2nd place in number of native speakers';
+  case "spanish":
+    console.log("2nd place in number of native speakers");
+    break;
+
+  // english: '3rd place';
+  case "english":
+    console.log("3rd place");
+    break;
+
+  // hindi: 'Number 4';
+  case "hindi":
+    console.log("Number 4");
+    break;
+
+  // arabic: '5th most spoken language';
+  case "arabic":
+    console.log("5th most spoken language");
+    break;
+
+  // for all other simply log 'Great language too :D'.
+  default:
+    console.log("Great language too :D");
 }

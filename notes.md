@@ -469,6 +469,39 @@ if (favorite === 23) {
 (Solution review)\
 [All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
 
+## 26. The switch statement
+
+- `case` matches use strict equality comparisons (`===`)
+- `case` blocks don't need braces
+- Without `break`, `case` blocks fallthrough to next `case`
+
+```
+let day = "wednesday";
+
+switch (day) {
+  case "monday": // day === 'monday'
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+    break; // without break, fallthrough to next case
+  case "tuesday":
+    console.log("Prepare theory videos");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code examples");
+    break;
+  case "friday":
+    console.log("Record videos");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("Enjoy the weekend :D");
+    break;
+  default:
+    console.log("Not a valid day!");
+}
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
