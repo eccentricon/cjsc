@@ -539,10 +539,51 @@ console.log(`I like to drink ${drink}!`);
 (Solution review)\
 [All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
 
+## 30. JavaScript releases: ES5, ES6+, and ESNext
+
+- ES6/ES2015 (ECMAScript 2015) was a biggie
+- Yearly releases: ES2015, ES2016, ...ES2024
+- "Don't break the web" - JavaScript is backward-compatible all the way back to ES1!
+- It's not forwards-compatible!
+
+### How to use modern JavaScript
+
+1.  During development: Use the latest Chrome browser
+2.  During production: Use Babel to transpile and polyfill your code (converting
+    back to ES5 to ensure browser compatibility for all users)
+
+- ES5
+  - Fully supported in all browsers (down to IE 9 from 2011);
+  - _Ready to be used today_ 👍
+- ES6+
+
+  - ES6/ES2015 ... ESxxx
+  - ES6+: Well supported in all **modern** browsers;
+  - No support in **older** browsers;
+  - _Can use **most** features in production with transpiling and polyfilling_ 😃
+  - [JavaScript compatability table]
+
+- ESNext
+  - ESNext: Future versions of the language (new feature proposals that reach Stage 4);
+  - Can already use some features in production with transpiling and polyfilling.
+
+### Modern JavaScript from the beginning
+
+- 🔥 Learn modern JavaScript from the beginning!
+- ☝ But, also learn how some things used to be done before modern JavaScript
+  (e.g. `const` & `let` vs `var` and function constructors vs ES6 `class`).
+
+3 reasons why we should not forget the Good Ol’ JavaScript:
+
+- 👉 You will better understand how JavaScript actually works;
+- 👉 Many tutorials and code you find online today are still in ES5;
+- 👉 When working on old codebases, these will be written in ES5.
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
 [arithmetic operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#arithmetic_operators
+[JavaScript compatability table]: https://compat-table.github.io/compat-table/es6/
 [operator precedence]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence#table
 [string operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#string_operators
 [`typeof`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
