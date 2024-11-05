@@ -515,6 +515,25 @@ _statement_&mdash;a bigger piece of code that
 - performs an action
 - does _not_ necessarily produce a value
 
+## 28. The conditional (ternary) operator
+
+```
+age = 17;
+let drinker = "I like to drink wine! 🍷";
+let nondrinker = "I like to drink water. 💧";
+age >= 18 ? console.log(drinker) : console.log(nondrinker);
+
+// ternary produces a value, so can be used as an expression.
+drinker = "wine 🍷";
+nondrinker = "water 💧";
+
+console.log(`I like to drink ${age >= 18 ? drinker : nondrinker}!`);
+
+// better...
+let drink = age >= 18 ? "wine 🍷" : "water 💧";
+console.log(`I like to drink ${drink}!`);
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 

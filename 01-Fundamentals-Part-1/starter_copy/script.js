@@ -783,3 +783,55 @@ switch (language) {
   default:
     console.log("Great language too :D");
 }
+
+// ---------------------------------------------------------------------------
+lesson = "28. The conditional (ternary) operator";
+// ---------------------------------------------------------------------------
+logBanner(lesson);
+
+age = 17;
+let drinker = "I like to drink wine! 🍷";
+let nondrinker = "I like to drink water. 💧";
+age >= 18 ? console.log(drinker) : console.log(nondrinker);
+
+// ternary produces a value, so can be used as an expression.
+drinker = "wine 🍷";
+nondrinker = "water 💧";
+
+console.log(`I like to drink ${age >= 18 ? drinker : nondrinker}!`);
+
+// better...
+let drink = age >= 18 ? "wine 🍷" : "water 💧";
+console.log(`I like to drink ${drink}!`);
+
+logAssignment(lesson);
+/*
+1.  If your country's population is greater than 33 million,
+    use the ternary operator to log a string like this to the console: 
+    "Portugal's population is above average". Otherwise, simply log 
+    "Portugal's population is below average". Notice how only one word 
+    change between these two sentences!
+*/
+const AVG_POP = 33;
+let popHiLo = population > AVG_POP ? "above" : "below";
+console.log(`${COUNTRY}'s population is ${popHiLo} average.`);
+
+/*
+2.  After checking the result, change the population temporarily 
+    to 13 and then to 130. See the different results, and set the 
+    population back to original.
+*/
+
+origPopulation = population;
+country = "Fredonia";
+population = 13;
+popHiLo = population > AVG_POP ? "above" : "below";
+console.log(
+  `${country}'s population is ${popHiLo} average (${AVG_POP}M): ${population}M`
+);
+population = 130;
+popHiLo = population > AVG_POP ? "above" : "below";
+console.log(
+  `${country}'s population is ${popHiLo} average (${AVG_POP}M): ${population}M`
+);
+population = origPopulation;
