@@ -26,6 +26,8 @@ is currently checked out in the working directory).
 $ git pull origin master
 ```
 
+# Section 2: JavaScript fundamentals - part 1
+
 ## 9. Values and variables
 
 [Variable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#variables) names:
@@ -549,13 +551,13 @@ console.log(`I like to drink ${drink}!`);
 ### How to use modern JavaScript
 
 1.  During development: Use the latest Chrome browser
-2.  During production: Use Babel to transpile and polyfill your code (converting
+2.  During production: Use [Babel] to transpile and polyfill your code (converting
     back to ES5 to ensure browser compatibility for all users)
 
 - ES5
   - Fully supported in all browsers (down to IE 9 from 2011);
   - _Ready to be used today_ 👍
-- ES6+
+- "ES6+"
 
   - ES6/ES2015 ... ESxxx
   - ES6+: Well supported in all **modern** browsers;
@@ -563,7 +565,7 @@ console.log(`I like to drink ${drink}!`);
   - _Can use **most** features in production with transpiling and polyfilling_ 😃
   - [JavaScript compatability table]
 
-- ESNext
+- "ESNext"
   - ESNext: Future versions of the language (new feature proposals that reach Stage 4);
   - Can already use some features in production with transpiling and polyfilling.
 
@@ -579,11 +581,51 @@ console.log(`I like to drink ${drink}!`);
 - 👉 Many tutorials and code you find online today are still in ES5;
 - 👉 When working on old codebases, these will be written in ES5.
 
+# Section 3: JavaScript fundamentals - part 2
+
+## 31. Section intro
+
+## 32. Activating strict mode
+
+```
+"use strict";
+```
+
+[Strict mode] makes several changes to normal JavaScript semantics:
+
+- Eliminates some JavaScript silent errors by changing them to throw errors.
+- Fixes mistakes that make it difficult for JavaScript engines to perform
+  optimizations: strict mode code can sometimes be made to run faster than
+  identical code that's not strict mode.
+- Prohibits some syntax likely to be defined in future versions of ECMAScript.
+
+Has to be the very first statement in the script file (comments are allowed).
+
+For example
+
+```
+// "use strict";
+
+// ...
+
+let hasDriversLicense = false;
+const passTest = true;
+
+if (passTest) hasDriverLicense = true; // typo in variable name!
+if (hasDriversLicense) console.log("I can drive :D");
+
+// Ugh! No output!
+```
+
+Turning on strict mode reveals `Uncaught ReferenceError: hasDriverLicense is not defined`.
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
 [arithmetic operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#arithmetic_operators
+[Babel]: https://babeljs.io/
 [JavaScript compatability table]: https://compat-table.github.io/compat-table/es6/
 [operator precedence]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence#table
+[strict mode]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 [string operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#string_operators
 [`typeof`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
