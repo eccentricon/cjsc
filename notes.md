@@ -5,6 +5,7 @@
 - Jonas Schmedtmann: https://codingheroes.io/resources/
 - Course: https://www.udemy.com/course/the-complete-javascript-course/
   - Assignments: https://codingheroes.io/assignments/instructions.html
+    - Alternative: https://jonas.io/assignments/instructions.html
 - Repo: https://github.com/eccentricon/cjsc
 
 **Note:** On Mac, Control+Command+Spacebar (⌃⌘␣) to display emojis and symbols.
@@ -618,6 +619,26 @@ if (hasDriversLicense) console.log("I can drive :D");
 ```
 
 Turning on strict mode reveals `Uncaught ReferenceError: hasDriverLicense is not defined`.
+
+## 33. Functions
+
+```
+function fruitProcessor(apples, oranges) {
+  // console.log(apples, oranges);
+  const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+  return juice;
+}
+
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+// console.log(fruitProcessor(5, 0));
+
+const appleOrangeJuice = fruitProcessor(2, 4);
+console.log(appleOrangeJuice);
+```
+
+- Synonymous: "{ _Calling_ | _Running_ | _Invoking_ }" a function.
+- DRY programming principle - _"Don't Repeat Yourself"_
 
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
