@@ -640,6 +640,69 @@ console.log(appleOrangeJuice);
 - Synonymous: "{ _Calling_ | _Running_ | _Invoking_ }" a function.
 - DRY programming principle - _"Don't Repeat Yourself"_
 
+## 34. Function declarations vs. expressions
+
+- "parameter" is the _placeholder_ in a function declaration
+- "argument" is the _actual value_ supplied in a function call
+
+- Function **declaration** - declare the function with `function` keyword.
+
+  ```
+  // a function declaration
+  function calcAge1(birthYear) {
+    const CURRENT_YEAR = 2024;
+    return CURRENT_YEAR - birthYear;
+  }
+  let birthYear = 1961;
+  console.log(
+    `If you were born in ${birthYear}, your age is ${calcAge1(birthYear)}`
+  );
+  ```
+
+- Function **expression** - Assign an _anonymous function_ to a variable.
+
+  ```
+  // a function expression
+  const calcAge2 = function (birthYear) {
+    const CURRENT_YEAR = 2024;
+    return CURRENT_YEAR - birthYear;
+  };
+
+  // call calcAge2 in the same way
+  console.log(
+    `If you were born in ${birthYear}, your age is ${calcAge2(birthYear)}`
+  );
+  ```
+
+What's the difference?
+
+- You can call a function declaration _before_ the declaration appears in the code. (This works because of  
+  _varible hoisting_.)
+
+  ```
+  let birthYear = 1961;
+  // We can call calcAge1() before it's declared!
+  console.log(
+    `If you were born in ${birthYear}, your age is ${calcAge1(birthYear)}`
+  );
+
+  // a function declaration
+  function calcAge1(birthYear) {
+    const CURRENT_YEAR = 2024;
+    return CURRENT_YEAR - birthYear;
+  }
+  ```
+
+- Calling a variable assigned to a function _expression_ before it's defined:
+
+  ```
+    console.log(
+    `If you were born in ${birthYear}, your age is ${calcAge2(birthYear)}`
+  );
+  ```
+
+  `Uncaught ReferenceError: Cannot access 'calcAge2' before initialization`
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
