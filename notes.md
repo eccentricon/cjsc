@@ -703,10 +703,61 @@ What's the difference?
 
   `Uncaught ReferenceError: Cannot access 'calcAge2' before initialization`
 
+## 35. Arrow functions
+
+- A third way to define functions
+- An alternative [function expression][arrow function expressions]
+- No need for curly braces
+
+```
+const calcAge3 = (birthYear) => CURRENT_YEAR - birthYear;
+```
+
+```
+// call calcAge3 in the same way
+console.log(
+  `If you were born in ${birthYear}, your age is ${calcAge3(birthYear)}`
+);
+```
+
+Multiple parameters, and multiple statements are possible with arrow functions
+too:
+
+- Parentheses (`()`) around parameter list
+- Braces (`{}`) around implementation
+
+```
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const RETIREMENT_AGE = 65;
+  const AGE = calcAge3(birthYear);
+  return `${firstName} can retire in ${RETIREMENT_AGE - AGE} years.`;
+};
+```
+
+### 3 ways to define functions
+
+So we now have three ways to define functions:
+
+1. Function declarations
+   ```
+   function calcAge1(birthYear) {...}
+   ```
+2. Function expressions
+   ```
+   const calcAge2 = function (birthYear) {...}
+   ```
+3. Arrow functions
+   ```
+   const calcAge3 = (birthYear) => CURRENT_YEAR - birthYear;
+   ```
+   - Good for short, one-liners
+   - Don't get a `this` (more on this later)
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
 [arithmetic operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#arithmetic_operators
+[arrow function expressions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 [Babel]: https://babeljs.io/
 [JavaScript compatability table]: https://compat-table.github.io/compat-table/es6/
 [operator precedence]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence#table

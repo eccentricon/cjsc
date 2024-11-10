@@ -150,3 +150,41 @@ const printPopPercentage = function (country, population) {
 printPopPercentage("China", popChina);
 printPopPercentage("Brazil", popBrazil);
 printPopPercentage("Indonesia", popIndonesia);
+
+// ---------------------------------------------------------------------------
+lesson = "35. Arrow functions";
+// ---------------------------------------------------------------------------
+logBanner(lesson);
+
+// const calcAge2 = function (birthYear) {
+//   const CURRENT_YEAR = 2024;
+//   return CURRENT_YEAR - birthYear;
+// };
+const CURRENT_YEAR = new Date().getFullYear();
+const calcAge3 = (birthYear) => CURRENT_YEAR - birthYear;
+// call calcAge3 in the same way
+birthYear = 1961;
+console.log(`It is now ${CURRENT_YEAR}.`);
+
+console.log(
+  `If you were born in ${birthYear}, your age is ${calcAge3(birthYear)}.`
+);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+  const RETIREMENT_AGE = 65;
+  const AGE = calcAge3(birthYear);
+  return `${firstName} can retire in ${RETIREMENT_AGE - AGE} years.`;
+};
+
+console.log(yearsUntilRetirement(1961, "Ted"));
+console.log(yearsUntilRetirement(1959, "Colette"));
+
+logAssignment(lesson);
+
+const percentageOfWorld3 = (population) =>
+  Number(((population / WORLD_POPULATION) * 100).toFixed(2));
+
+console.log(
+  `Brazil's ${popBrazil} people are ${percentageOfWorld3(popBrazil)}` +
+    `% of the world.`
+);
