@@ -772,6 +772,54 @@ function fruitProcessor36(apples, oranges) {
 console.log(fruitProcessor36(2, 3));
 ```
 
+## 37. Reviewing functions
+
+☝ Three different ways of writing functions, but they all work in asimilar way: receive input data, transform data, and then output data.
+
+- 👉 **Function declaration**&mdash;Function that can be used before it’s
+  declared.
+  ```
+  function calcAge(birthYear) {
+    return 2037 - birthYear;
+  }
+  ```
+- 👉 **Function expression**&mdash;Essentially a function value stored in a
+  variable
+  ```
+  const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+  }
+  ```
+- 👉 **Arrow function**&mdash;Great for a quick one-line functions. Has no `this`
+  keyword (more later...)
+  ```
+  const calcAge = (birthYear) => 2037 - birthYear;
+  ```
+
+### Anatomy of a function
+
+```
+function calcAge(birthYear, firstName) {
+  const age = 2037 - birthYear;
+  console.log(`${firstName} is ${age} years old.`);
+  return age;
+}
+
+const age = calcAge(1991, 'Jonas');
+```
+
+- **Function name:** (e.g. `calcAge`).
+- **Parameters:** placeholders to receive input values. Like local
+  variables of a function (e.g. `birthYear` and `firstName`).
+- **Function body:** block of code that we want to reuse. Processes the
+  function’s input data (e.g. everything inside `{` and `}`).
+- **`return` statement:** output a value from the function and
+  terminate execution (e.g. `return age;`).
+- **Variable:** to save returned value (function output)
+  (e.g. `age` in `const age = calcAge(1991, 'Jonas');`).
+- **Arguments:** actual values of function parameters, to input data (e.g. `1991` and `'Jonas'`).
+- **Calling:** (a.k.a. "running" or "invoking") the function, using `()`
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
