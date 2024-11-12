@@ -753,6 +753,25 @@ So we now have three ways to define functions:
    - Good for short, one-liners
    - Don't get a `this` (more on this later)
 
+## 36. Functions calling other functions
+
+```
+const cutFruitPieces = function (fruit) {
+  return fruit * 4;
+};
+
+function fruitProcessor36(apples, oranges) {
+  const applePieces = cutFruitPieces(apples); // <= here
+  const orangePieces = cutFruitPieces(oranges); // <= and here
+  const juice =
+    `Juice with ${applePieces} pieces of apple, ` +
+    `and ${orangePieces} pieces of orange.`;
+  return juice;
+}
+
+console.log(fruitProcessor36(2, 3));
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 

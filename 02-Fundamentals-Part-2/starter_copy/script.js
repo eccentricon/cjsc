@@ -188,3 +188,44 @@ console.log(
   `Brazil's ${popBrazil} people are ${percentageOfWorld3(popBrazil)}` +
     `% of the world.`
 );
+
+// ---------------------------------------------------------------------------
+lesson = "36. Functions calling other functions";
+// ---------------------------------------------------------------------------
+logBanner(lesson);
+
+const cutFruitPieces = function (fruit) {
+  return fruit * 4;
+};
+
+function fruitProcessor36(apples, oranges) {
+  const applePieces = cutFruitPieces(apples);
+  const orangePieces = cutFruitPieces(oranges);
+  const juice =
+    `Juice with ${applePieces} pieces of apple, ` +
+    `and ${orangePieces} pieces of orange.`;
+  return juice;
+}
+
+console.log(fruitProcessor36(2, 3));
+
+logAssignment(lesson);
+/*
+ * Create a function called describePopulation. Use the function
+ * type you like the most. This function takes in two arguments:
+ * country and population, and returns a strings like this:
+ * 'China has 1441 million people, which is about 18.2% of the world'.
+ *
+ * To calculate the percentage, describePopulation calls the
+ * percentageOfWorld1 you created earlier.
+ *
+ * Call describePopulation with data for 3 countries of your choice.
+ */
+
+const describePopulation36 = (country, population) =>
+  `${country} has ${population} million people, ` +
+  `which is about ${percentageOfWorld1(population)}% of the world.`;
+
+console.log(describePopulation36("China", popChina));
+console.log(describePopulation36("Indonesia", popIndonesia));
+console.log(describePopulation36("Brazil", popBrazil));
