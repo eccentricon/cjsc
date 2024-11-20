@@ -820,6 +820,90 @@ const age = calcAge(1991, 'Jonas');
 - **Arguments:** actual values of function parameters, to input data (e.g. `1991` and `'Jonas'`).
 - **Calling:** (a.k.a. "running" or "invoking") the function, using `()`
 
+## 38. Coding challenge #1
+
+(Solution review)\
+[All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
+
+## 39. Introduction to arrays
+
+### Defining arrays
+
+Two ways to define:
+
+- Array literal syntax
+
+  ```
+  const friends = ["Michael", "Steven", "Peter"];
+  ```
+
+- Array constructor syntax
+
+  ```
+  const years = new Array(1991, 1984, 2008, 2020);
+  ```
+
+> **NOTE:** While `const` prevents redefining the `friends` variable,
+> you can still change individual _elements_ of `friends`:\
+>
+> ```
+> friends[0] = "Ted";        // OK
+> friends = ["Ted", "Jim"];  // error!
+> ```
+
+### Accessing array elements
+
+```
+console.log(friends[0]); // "Michael"
+console.log(friends[2]); // "Peter"
+```
+
+### Array length
+
+Use the `length` _property_ of the array object:
+
+```
+console.log(`friends has ${friends.length} elements.`);
+```
+
+Last element:
+
+```
+console.log(friends[friends.length - 1]); // last element
+```
+
+### Mutating an array
+
+_Elements_ within an array are mutable, even when the array object is a `const`:
+
+```
+const friends = ["Michael", "Steven", "Peter"];
+// ...
+friends[2] = "Jay"; // OK
+console.log(friends); // ['Michael', 'Steven', 'Jay']
+
+// friends = ["Bob", "Alice"]; // Error!
+```
+
+### Mixed array element types
+
+Mixed types are possible:
+
+```
+let mixedArray = [10, "hello", true, { name: "Alice" }];
+```
+
+This array includes a number, a string, a boolean, and an object.
+
+```
+const fname = "Jonas";
+const jonas = [fname, "Schmedtmann", 2037 - 1991, "teacher", friends];
+console.log(jonas); // ['Jonas', 'Schmedtmann', 46, 'teacher', Array(3)]
+```
+
+Elements can be variables (`fname`), expressions (`2037 - 1991`), and even
+nested arrays (`friends`).
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 

@@ -300,3 +300,65 @@ checkWinner(scoreDolphins, scoreKoalas);
 // console.log(`Dolphins average: ${calcAverage3(85, 54, 41)}`);
 // console.log(`Koalas average: ${calcAverage3(23, 34, 27)}`);
 // checkWinner(calcAverage3(85, 54, 41), calcAverage3(23, 34, 27));
+
+// ---------------------------------------------------------------------------
+lesson = "39. Introduction to arrays";
+// ---------------------------------------------------------------------------
+logBanner(lesson);
+
+const friends = ["Michael", "Steven", "Peter"];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+console.log(years);
+
+console.log(friends[0]); // "Michael"
+console.log(friends[2]); // "Peter"
+
+console.log(`friends has ${friends.length} elements.`);
+console.log(friends[friends.length - 1]); // last element
+
+friends[2] = "Jay";
+console.log(friends); // ['Michael', 'Steven', 'Jay']
+
+let mixedArray = [10, "hello", true, { name: "Alice" }];
+console.log(mixedArray);
+
+const fname = "Jonas";
+const jonas = [fname, "Schmedtmann", 2037 - 1991, "teacher", friends];
+console.log(jonas); // ['Jonas', 'Schmedtmann', 46, 'teacher', Array(3)]
+
+logAssignment(lesson);
+/* Create an array containing 4 population values of 4 countries of your
+ * choice. You may use the values you have been using previously. Store
+ * this array into a variable called populations.
+ *
+ * Log to the console whether the array has 4 elements or not (true or false).
+ *
+ * Create an array called percentages containing the percentages of the world
+ * population for these 4 population values. Use the function
+ * percentageOfWorld1 that you created earlier to compute the 4 percentage
+ * values.
+ */
+
+// const popChina = 1400;
+// const popIndonesia = 276;
+// const popBrazil = 214;
+const popUSA = 335;
+
+const countries = ["China", "Indonesia", "Brazil", "USA"];
+
+const populations = [popChina, popIndonesia, popBrazil, popUSA];
+console.log(`populations has 4 elements? ${populations.length === 4}`);
+
+const percentages = [
+  percentageOfWorld1(populations[0]),
+  percentageOfWorld1(populations[1]),
+  percentageOfWorld1(populations[2]),
+  percentageOfWorld1(populations[3]),
+];
+percentages.forEach((percentage, index) => {
+  console.log(
+    `${index + 1}. ${countries[index]}: ${populations[index]}M - ${percentage}%`
+  );
+});
