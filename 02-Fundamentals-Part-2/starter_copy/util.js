@@ -17,6 +17,7 @@ function logDivider(lineLength, separator) {
  * lines.
  *
  * @param {string} text - The banner text
+ * @returns {string} - The banner text
  */
 function logBanner(text) {
   const lineLength = 60;
@@ -32,12 +33,15 @@ function logBanner(text) {
 
   header += logDivider(lineLength, separator);
   console.log(header);
+
+  return text;
 }
 
 /**
  * Logs an assignment banner using the given assignment title text.
  *
- * @param {string} text - the assignment title text
+ * @param {string} text - The assignment title text
+ * @returns {string} - The assignment title text
  */
 function logAssignment(text) {
   console.log("\n*** ASSIGNMENT", text, "***");
