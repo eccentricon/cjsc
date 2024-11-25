@@ -387,7 +387,7 @@ in two scenarios:
 1. Using logical operators/expressions (`==`, `!=`, etc.)
 2. Logical context (e.g. the condition of an `if`-`else` statement)
 
-## Equality operators: == vs. ===
+## Equality operators: == vs. === <a id="strict-equality"></a>
 
 ```
 if (age === 18) console.log("You are an adult!");
@@ -844,7 +844,7 @@ Two ways to define:
   ```
 
 > **NOTE:** While `const` prevents redefining the `friends` variable,
-> you can still change individual _elements_ of `friends`:\
+> you can still change individual _elements_ of `friends`:
 >
 > ```
 > friends[0] = "Ted";        // OK
@@ -904,10 +904,84 @@ console.log(jonas); // ['Jonas', 'Schmedtmann', 46, 'teacher', Array(3)]
 Elements can be variables (`fname`), expressions (`2037 - 1991`), and even
 nested arrays (`friends`).
 
+## 39. Introduction to arrays
+
+See [Array] object docs.
+
+### Array methods
+
+#### push()
+
+Adds one or more elements to the **end** of an array, and
+returns the new length of the array.
+
+```
+console.log(friends); // ['Michael', 'Steven', 'Peter']
+const newLength = friends.push("Jay");
+console.log(friends); // ['Michael', 'Steven', 'Peter', 'Jay']
+console.log(newLength); // 4
+```
+
+#### unshift()
+
+Adds one or more elements to the **front** of an array, and
+returns the new length of the array.
+
+```
+friends.unshift("John");
+console.log(friends); // ['John', 'Michael', 'Steven', 'Peter', 'Jay']
+```
+
+#### pop()
+
+Removes the last element from an array and returns that element.
+
+```
+const popped = friends.pop();
+console.log(popped); // 'Jay'
+console.log(friends); // ['John', 'Michael', 'Steven', 'Peter']
+```
+
+#### shift()
+
+Removes the first element from an array and returns that element.
+
+```
+const shifted = friends.shift();
+console.log(shifted); // 'John'
+console.log(friends); // ['Michael', 'Steven', 'Peter']
+```
+
+#### indexOf()
+
+Returns the first (least) index at which a given element can be
+found in the calling array.
+
+```
+console.log(friends.indexOf("Steven")); // 1
+console.log(friends.indexOf("Bob")); // -1
+```
+
+#### includes()
+
+Determines whether the calling array contains a value, returning
+`true` or `false` as appropriate. Comparison uses
+[strict equality](#strict-equality).
+
+```
+console.log(friends.includes("Steven")); // true
+console.log(friends.includes("Bob")); // false
+friends.push(23);
+console.log(friends.includes("23")); // false, strict equality
+
+if (friends.includes("Steven")) console.log("You have a friend named Steven.");
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
 [arithmetic operators]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators#arithmetic_operators
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 [arrow function expressions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 [Babel]: https://babeljs.io/
 [JavaScript compatability table]: https://compat-table.github.io/compat-table/es6/

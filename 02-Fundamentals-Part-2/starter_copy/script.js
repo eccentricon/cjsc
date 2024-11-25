@@ -362,3 +362,40 @@ percentages.forEach((percentage, index) => {
     `${index + 1}. ${countries[index]}: ${populations[index]}M - ${percentage}%`
   );
 });
+
+// ---------------------------------------------------------------------------
+lesson = logBanner("39. Introduction to arrays");
+// ---------------------------------------------------------------------------
+friends[2] = "Peter"; // reset to original array values
+console.log(friends); // ['Michael', 'Steven', 'Peter']
+
+// push()
+const newLength = friends.push("Jay");
+console.log(friends); // ['Michael', 'Steven', 'Peter', 'Jay']
+console.log(newLength); // 4
+
+// unshift()
+friends.unshift("John");
+console.log(friends); // ['John', 'Michael', 'Steven', 'Peter', 'Jay']
+
+// pop()
+const popped = friends.pop();
+console.log(popped); // 'Jay'
+console.log(friends); // ['John', 'Michael', 'Steven', 'Peter']
+
+// shift()
+const shifted = friends.shift();
+console.log(shifted); // 'John'
+console.log(friends); // ['Michael', 'Steven', 'Peter']
+
+// indexOf()
+console.log(friends.indexOf("Steven")); // 1
+
+// includes
+console.log(friends.includes("Steven")); // true
+console.log(friends.includes("Bob")); // false
+friends.push(23);
+console.log(friends.includes("23")); // false, strict equality
+console.log(friends.includes(23)); // true
+
+if (friends.includes("Steven")) console.log("You have a friend named Steven.");
