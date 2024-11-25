@@ -364,7 +364,7 @@ percentages.forEach((percentage, index) => {
 });
 
 // ---------------------------------------------------------------------------
-lesson = logBanner("39. Introduction to arrays");
+lesson = logBanner("40. Introduction to arrays");
 // ---------------------------------------------------------------------------
 friends[2] = "Peter"; // reset to original array values
 console.log(friends); // ['Michael', 'Steven', 'Peter']
