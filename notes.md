@@ -904,7 +904,7 @@ console.log(jonas); // ['Jonas', 'Schmedtmann', 46, 'teacher', Array(3)]
 Elements can be variables (`fname`), expressions (`2037 - 1991`), and even
 nested arrays (`friends`).
 
-## 39. Introduction to arrays
+## 40. Basic array operations
 
 See [Array] object docs.
 
@@ -975,6 +975,27 @@ friends.push(23);
 console.log(friends.includes("23")); // false, strict equality
 
 if (friends.includes("Steven")) console.log("You have a friend named Steven.");
+```
+
+## 41. Coding challenge #2
+
+(Solution review)\
+[All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
+
+## 42. Introduction to objects
+
+Collection of key-value pairs, where the key is called a "_property_".
+
+### Object literal syntax
+
+```
+const jonas2 = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+};
 ```
 
 <!-- ---------------------------------------------------------------------- ->

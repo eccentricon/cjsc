@@ -505,3 +505,16 @@ console.log(tips);
 
 const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(totals);
+
+// ---------------------------------------------------------------------------
+lesson = logBanner("42. Introduction to objects");
+// ---------------------------------------------------------------------------
+
+const jonas2 = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+};
+console.log(jonas2);
