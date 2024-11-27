@@ -518,3 +518,74 @@ const jonas2 = {
   friends: ["Michael", "Peter", "Steven"],
 };
 console.log(jonas2);
+
+logAssignment(lesson);
+/*
+ * Create an object called myCountry for a country of your choice,
+ * containing properties country, capital, language, population and
+ * neighbours (an array like we used in previous assignments).
+ */
+let myCountry = {
+  country: "United States",
+  capital: "Washington, D.C.",
+  language: "English",
+  population: 346,
+  neighbors: ["Canada", "Mexico"],
+};
+console.log(myCountry);
+
+// ---------------------------------------------------------------------------
+lesson = logBanner("43. Dot vs. bracket notation");
+// ---------------------------------------------------------------------------
+
+console.log(jonas2.lastName); // Dot notation
+console.log(jonas2["lastName"]); // Bracket notation
+
+const nameKey = "Name";
+console.log(jonas2[`first${nameKey}`], jonas2[`last${nameKey}`]);
+
+// const interestedIn = prompt(
+//   "Which property? 'firstName', 'lastName', 'age', 'job', or 'friends'."
+// );
+
+let interestedIn = "weight";
+
+// Non-existent propertios are 'undefined' (falsey)
+if (jonas2[interestedIn]) {
+  console.log(`${interestedIn}: ${jonas2[interestedIn]}`);
+} else {
+  console.log(`Unknown property: '${interestedIn}'`);
+}
+
+jonas2.location = "Portugal";
+jonas2["twitter"] = "@jonasschmedtman";
+console.log(jonas2);
+
+// Challenge:
+// Print "Jonas has 3 friends, and his best friend is Michael."
+let outString = `${jonas2.firstName} has `;
+outString += `${jonas2.friends.length} friends, `;
+outString += `and his best friend is ${jonas2.friends[0]}.`;
+console.log(outString);
+
+logAssignment(lesson);
+/*
+ * 1. Using the object from the previous assignment, log a string
+ *    like this to the console: 'Finland has 6 million finnish-speaking people,
+ *    3 neighbouring countries and a capital called Helsinki'.
+ */
+
+outString = `${myCountry.country} has ${myCountry.population} million `;
+outString += `${myCountry.language}-speaking people, `;
+outString += `${myCountry.neighbors.length} neighbouring countries, `;
+outString += `and a capital called ${myCountry.capital}`;
+console.log(outString);
+
+/*
+ * 2. Increase the country's population by two million using dot notation,
+ *    and then decrease it by two million using bracket notation.
+ */
+myCountry.population += 2;
+console.log(`Population is now ${myCountry.population} million.`);
+myCountry[`population`] -= 2;
+console.log(`Population is now ${myCountry["population"]} million.`);

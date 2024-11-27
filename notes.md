@@ -998,6 +998,67 @@ const jonas2 = {
 };
 ```
 
+## 43. Dot vs. bracket notation
+
+Two ways to access properties:
+
+- Dot notation ("member access" - `.`)
+
+  ```
+  console.log(jonas2.lastName); // Dot notation
+  ```
+
+- Bracket notation ("computed member access" - `[]`)
+
+  ```
+  console.log(jonas2["lastName"]); // Bracket notation
+  ```
+
+With bracket notaton, field names can be computed. For example:
+
+```
+const nameKey = "Name";
+console.log(jonas2[`first${nameKey}`], jonas2[`last${nameKey}`]);
+```
+
+### Accessing non-existent properties
+
+No error, but value is [`undefined`](#7-primitive-data-types)
+
+```
+// Non-existent properties are 'undefined' (falsey)
+if (jonas2[interestedIn]) {
+  console.log(`${interestedIn}: ${jonas2[interestedIn]}`);
+} else {
+  console.log(`Unknown property: '${interestedIn}'`);
+}
+```
+
+### Adding new properties
+
+Both notations work.
+
+```
+jonas2.location = "Portugal";
+jonas2["twitter"] = "@jonasschmedtman";
+console.log(jonas2);
+```
+
+### Member access precedence
+
+```
+// Challenge:
+// Print "Jonas has 3 friends, and his best friend is Michael."
+let outString = `${jonas2.firstName} has `;
+outString += `${jonas2.friends.length} friends, `;
+outString += `and his best friend is ${jonas2.friends[0]}.`;
+console.log(outString);
+```
+
+- `${jonas2.friends.length}` works because the [operator precedence] for
+  the member access operator (`x.y`) is **left-to-right**.
+- `${jonas2.friends[0]}` works for the same reason.
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
