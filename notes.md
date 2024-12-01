@@ -1059,6 +1059,78 @@ console.log(outString);
   the member access operator (`x.y`) is **left-to-right**.
 - `${jonas2.friends[0]}` works for the same reason.
 
+## 44. Object methods
+
+```
+const jonas3 = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  age: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+  calcAge: function (birthYear) {
+    return new Date().getFullYear() - birthYear;
+  },
+};
+console.log(jonas3.calcAge(1991)); // dot notation
+console.log(jonas3["calcAge"](1991)); // bracket notation
+```
+
+### _this_ keyword
+
+```
+const jonas3 = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+  calcAge: function () {
+    console.log(this);
+    return new Date().getFullYear() - this.birthYear;
+  },
+};
+console.log(jonas3.calcAge());
+```
+
+### Method adds new property
+
+The following is inefficient:
+
+```
+console.log(jonas3.calcAge());
+console.log(jonas3.calcAge());
+console.log(jonas3.calcAge());
+console.log(jonas3.calcAge());
+```
+
+Better: have the method store the calculated age as a new
+property:
+
+```
+const jonas3 = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+
+  calcAge: function () {
+    // Create a new property 'age'
+    this.age = new Date().getFullYear() - this.birthYear;
+    return this.age;
+  },
+
+};
+console.log(jonas3.calcAge()); // initialize once
+console.log(jonas3.age); // access computed value
+console.log(jonas3.age);
+console.log(jonas3.age);
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 

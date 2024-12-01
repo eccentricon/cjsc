@@ -589,3 +589,75 @@ myCountry.population += 2;
 console.log(`Population is now ${myCountry.population} million.`);
 myCountry[`population`] -= 2;
 console.log(`Population is now ${myCountry["population"]} million.`);
+
+// ---------------------------------------------------------------------------
+lesson = logBanner("44. Object methods");
+// ---------------------------------------------------------------------------
+
+const jonas3 = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+  // calcAge: function (birthYear) {
+  //   return new Date().getFullYear() - birthYear;
+  // },
+  // calcAge: function () {
+  //   console.log(this);
+  //   return new Date().getFullYear() - this.birthYear;
+  // },
+  calcAge: function () {
+    // Create a new property
+    this.age = new Date().getFullYear() - this.birthYear;
+    return this.age;
+  },
+};
+console.log(jonas3.calcAge());
+console.log(jonas3.age);
+console.log(jonas3.age);
+console.log(jonas3.age);
+
+// Challenge
+// Write a method to print "Jonas is a 46-year-old teacher,
+// and he has {a|no} driver's license."
+
+jonas3.about = function () {
+  this.calcAge();
+  return `${this.firstName} is a ${this.age}-year-old ${this.job}
+  and he has ${this.hasDriversLicense ? "a" : "no"} drivers's licence.`;
+};
+console.log(jonas3.about());
+
+logAssignment(lesson);
+/*
+ * 1. Add a method called describe to the myCountry object. This method
+ *    will log a string to the console, similar to the string logged in
+ *    the previous assignment, but this time using the 'this' keyword.
+ *
+ * 2. Call the describe method.
+ *
+ * 3. Add a method called checkIsland to the myCountry object. This method
+ *    will set a new property on the object, called isIsland. isIsland will
+ *    be true if there are no neighbouring countries, and false if there are.
+ *    Use the ternary operator to set the property.
+ */
+myCountry.describe = function () {
+  console.log(
+    `${this.country} has ${this.population} million ` +
+      `${this.language}-speaking people, ` +
+      `${this.neighbors.length} neighbouring countries, ` +
+      `and a capital called ${this.capital}`
+  );
+};
+myCountry.describe();
+
+myCountry.checkIsland = function () {
+  this.isIsland = this.neighbors.length ? false : true;
+  return this.isIsland;
+};
+
+console.log(
+  `${myCountry.country} ${myCountry.checkIsland() ? "is" : "is not"} an island.`
+);
