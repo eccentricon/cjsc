@@ -1131,6 +1131,14 @@ console.log(jonas3.age);
 console.log(jonas3.age);
 ```
 
+## 46. The for loop
+
+```
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+}
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
