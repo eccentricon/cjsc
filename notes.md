@@ -1139,6 +1139,37 @@ for (let rep = 1; rep <= 10; rep++) {
 }
 ```
 
+## 47. Looping arrays, breaking, and continuing
+
+```
+for (let i = 0; i < jonasArray.length; i++) {
+  console.log(`Element ${i}: ${jonasArray[i]}`);
+}
+```
+
+### `continue` and `break`
+
+- `continue` terminates execution of the statements in the current iteration
+  of the current or labeled loop, and continues execution of the loop with the
+  next iteration.
+- `break` terminates the current loop or `switch` statement and transfers
+  program control to the statement following the terminated statement. It can
+  also be used to jump past a labeled statement when used within that labeled
+  statement.
+
+```
+console.log(`--- ONLY STRINGS ---`);
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== "string") continue;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+console.log(`--- BREAK WITH NUMBER ---`);
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] === "number") break;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 

@@ -737,3 +737,83 @@ logAssignment(lesson);
 for (let voter = 1; voter <= 10; voter++) {
   console.log(`Voter number ${voter} is currently voting`);
 }
+
+// ---------------------------------------------------------------------------
+lesson = logBanner("47. Looping arrays, breaking, and continuing");
+// ---------------------------------------------------------------------------
+let jonasArray = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Michael", "Peter", "Steven"],
+];
+console.log(jonasArray);
+
+let types = [];
+
+for (let i = 0; i < jonasArray.length; i++) {
+  console.log(`Element ${i}: ${jonasArray[i]} (${typeof jonasArray[i]})`);
+  // types[i] = typeof jonasArray[i];
+  types.push(typeof jonasArray[i]);
+}
+console.log(types);
+
+let years2 = [1991, 2007, 1969, 2020];
+let ages = [];
+for (let i = 0; i < years2.length; i++) {
+  ages.push(CURRENT_YEAR - years2[i]);
+}
+console.log(ages);
+for (let i = 0; i < ages.length; i++) {
+  console.log(
+    `In ${CURRENT_YEAR}, those born in ${years2[i]} are ${ages[i]} years old.`
+  );
+}
+
+// continue and break
+console.log(`--- ONLY STRINGS ---`);
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== "string") continue;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+console.log(`--- BREAK WITH NUMBER ---`);
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] === "number") break;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+logAssignment(lesson);
+/*
+ * 1. Let's bring back the populations array from a previous assignment.
+ *
+ * 2. Use a for loop to compute an array called percentages2 containing
+ *    the percentages of the world population for the 4 population values.
+ *    Use the function percentageWOrld1 that you created earlier.
+ *
+ * 3. Confirm that percentages2 contains exactly the same values as the
+ *    percentages array that we created manually in the previous assignment,
+ *    and reflect on how much better this solution is.
+ */
+console.log(populations);
+
+let percentages2 = [];
+for (let i = 0; i < populations.length; i++) {
+  console.log(
+    `Population ${populations[i]} million is ${percentageOfWorld1(
+      populations[i]
+    )} percent of the world.`
+  );
+  percentages2.push(percentageOfWorld1(populations[i]));
+}
+
+for (let i = 0; i < percentages2.length; i++) {
+  // console.log(
+  //   `percentages[${i}]: ${percentages[i]}\tpercentages2[${i}]: ${percentages2[i]}`
+  // );
+  if (percentages[i] === percentages2[i]) continue;
+  console.log(
+    `percentages[${i}]: ${percentages[i]}\tpercentages2[${i}]: ${percentages2[i]}`
+  );
+}
