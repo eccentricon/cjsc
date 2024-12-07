@@ -817,3 +817,55 @@ for (let i = 0; i < percentages2.length; i++) {
     `percentages[${i}]: ${percentages[i]}\tpercentages2[${i}]: ${percentages2[i]}`
   );
 }
+
+// ---------------------------------------------------------------------------
+lesson = logBanner("48. Looping backwards and loops in loops");
+// ---------------------------------------------------------------------------
+// (Defined above...)
+// let jonasArray = [
+//   "Jonas",
+//   "Schmedtmann",
+//   2037 - 1991,
+//   "teacher",
+//   ["Michael", "Peter", "Steven"],
+// ];
+
+// Loop backwards
+for (let i = jonasArray.length - 1; i >= 0; i--) {
+  console.log(`Element ${i}: ${jonasArray[i]}`);
+}
+
+// Nested looping
+// 3 exercises, 5 reps each
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`----- Starting exercise ${exercise}`);
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`\t🏋️‍♀️ Exercise ${exercise}, repitition ${rep}`);
+  }
+}
+
+logAssignment(lesson);
+/*
+ * 1. Store this array of arrays into a variable called
+ *    listOfNeighbours:
+ *
+ * [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+ *
+ * 2. Log only the neighbouring countries to the console,
+ *    one by one, not the entire arrays. Log a string like
+ *    'Neighbour: Canada' for each country.
+ *
+ * 3. You will need a loop inside a loop for this. This is
+ *    actually a bit tricky, so don't worry if it's too difficult
+ *    for you! But you can still try to figure this out anyway 😉
+ */
+let listOfNeighbours = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
+];
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  for (let j = 0; j < listOfNeighbours[i].length; j++) {
+    console.log(`Neighbor: ${listOfNeighbours[i][j]}`);
+  }
+}

@@ -1170,6 +1170,28 @@ for (let i = 0; i < jonasArray.length; i++) {
 }
 ```
 
+## 48. Looping backwards and loops in loops
+
+### Loop backwards
+
+```
+for (let i = jonasArray.length - 1; i >= 0; i--) {
+  console.log(`Element ${i}: ${jonasArray[i]}`);
+}
+```
+
+### Nested looping
+
+```
+// 3 exercises, 5 reps each
+for (let exercise = 1; exercise <= 3; exercise++) {
+  console.log(`----- Starting exercise ${exercise}`);
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`\t🏋️‍♀️ Exercise ${exercise}, repitition ${rep}`);
+  }
+}
+```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
