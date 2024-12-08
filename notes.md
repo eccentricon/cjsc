@@ -1222,6 +1222,20 @@ while (die !== 6) {
 (Solution review)\
 [All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
 
+# Section 5: Developer skills and editor setup
+
+## 55. Setting up Prettier and VS Code
+
+- https://prettier.io/
+- Create `.prettierrc` in VS Code project directory
+  - https://prettier.io/docs/en/options
+    ```
+    {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+    }
+    ```
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 

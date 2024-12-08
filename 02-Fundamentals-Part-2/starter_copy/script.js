@@ -950,6 +950,10 @@ while (i < percentages3.length) {
 }
 console.log(`${test_status}: All tests complete.`);
 
+// ---------------------------------------------------------------------------
+lesson = logBanner("50. Coding challenge #4");
+// ---------------------------------------------------------------------------
+
 /*
  * CHALLENGE #4
  *
