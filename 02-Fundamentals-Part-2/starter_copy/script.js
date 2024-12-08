@@ -869,3 +869,83 @@ for (let i = 0; i < listOfNeighbours.length; i++) {
     console.log(`Neighbor: ${listOfNeighbours[i][j]}`);
   }
 }
+
+// ---------------------------------------------------------------------------
+lesson = logBanner("49. The while loop");
+// ---------------------------------------------------------------------------
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep} 🏋️‍♀️`);
+// }
+
+// while loop
+let rep = 1;
+while (rep <= 5) {
+  console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+  rep++;
+}
+
+// let die = Math.trunc(Math.random() * 6) + 1;
+// console.log(die);
+
+/**
+ * Rolls a single six-sided die
+ *
+ * @returns {number} The roll value
+ */
+const roll = () => Math.trunc(Math.random() * 6) + 1;
+
+let die = roll();
+
+// Keep rolling until we roll a 6 ⚅
+while (die !== 6) {
+  console.log(`You rolled a ${die}`);
+  die = roll();
+  if (die === 6) console.log(`🎲 ⚅ ROLLED A ${die} ⚅ 🎲! Ending loop.`);
+}
+
+logAssignment(lesson);
+
+/*
+ * 1. Recreate the challenge from the lecture 'Looping Arrays, Breaking
+ *    and Continuing', but this time using a while loop (call the array
+ *    percentages3).
+ *
+ * 2. Reflect on what solution you like better for this task: the for loop
+ *    or the while loop?
+ */
+
+let percentages3 = [];
+// for (let i = 0; i < populations.length; i++)
+let i = 0;
+while (i < populations.length) {
+  console.log(
+    `Population ${populations[i]} million is ${percentageOfWorld1(
+      populations[i]
+    )} percent of the world.`
+  );
+  percentages3.push(percentageOfWorld1(populations[i]));
+  i++;
+}
+
+// Test for mismatches...
+
+// for (let i = 0; i < percentages3.length; i++) {
+i = 0;
+let test_status = "PASS";
+while (i < percentages3.length) {
+  // console.log(
+  //   `percentages[${i}]: ${percentages[i]}\tpercentages3[${i}]: ${percentages3[i]}`
+  // );
+  if (percentages[i] === percentages3[i]) {
+    test_status = "PASS";
+    i++;
+    continue;
+  } else {
+    test_status = "FAIL";
+    console.log(
+      `ERROR: percentages[${i}]: ${percentages[i]}\tpercentages3[${i}]: ${percentages3[i]}`
+    );
+  }
+}
+console.log(`${test_status}: All tests complete.`);

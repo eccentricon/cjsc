@@ -1131,6 +1131,11 @@ console.log(jonas3.age);
 console.log(jonas3.age);
 ```
 
+## 45. Coding challenge #3
+
+(Solution review)\
+[All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
+
 ## 46. The for loop
 
 ```
@@ -1189,6 +1194,26 @@ for (let exercise = 1; exercise <= 3; exercise++) {
   for (let rep = 1; rep <= 5; rep++) {
     console.log(`\t🏋️‍♀️ Exercise ${exercise}, repitition ${rep}`);
   }
+}
+```
+
+## 49. The while loop
+
+```
+/**
+ * Rolls a single six-sided die
+ *
+ * @returns {number} The roll value
+ */
+const roll = () => Math.trunc(Math.random() * 6) + 1;
+
+let die = roll();
+
+// Keep rolling until we roll a 6 ⚅
+while (die !== 6) {
+  console.log(`You rolled a ${die}`);
+  die = roll();
+  if (die === 6) console.log(`🎲 ⚅ ROLLED A ${die} ⚅ 🎲! Ending loop.`);
 }
 ```
 
