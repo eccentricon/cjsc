@@ -1217,6 +1217,11 @@ while (die !== 6) {
 }
 ```
 
+## 50. Coding challenge #4
+
+(Solution review)\
+[All Coding Challenges](course-material-v2.2/all-coding-challenges.pdf)
+
 <!-- ---------------------------------------------------------------------- ->
 <!-- Reference links -->
 
